@@ -56,7 +56,7 @@ function criaListaRepositoriosGithubProfile(response) {
         var li = CriaLIRepositorio(item);
         UL.appendChild(li);
     });
-    document.getElementById('exercicio 2').appendChild(UL);
+    document.getElementById('exercicio 2 e 3').appendChild(UL);
 }
 
 function criaULRepositorios() {
@@ -79,7 +79,7 @@ function verificaListaAntigaExiste() {
 
 function adicionaLoadingLista() {
     var ul = criaLoadingLista();
-    document.getElementById('exercicio 2').appendChild(ul);
+    document.getElementById('exercicio 2 e 3').appendChild(ul);
 }
 
 function criaLoadingLista() {
@@ -91,7 +91,7 @@ function criaLoadingLista() {
 
 function criaLILoading() {
     var LI = document.createElement('li');
-    LI.setAttribute('id', 'loading');
+    LI.setAttribute('id', 'lista repositorios');
     LI.innerHTML = 'Loading...'
     return LI;
 }
