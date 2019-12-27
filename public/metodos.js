@@ -25,7 +25,6 @@ function promiseConsultaRepositoriosGithubProfile() {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', 'https://api.github.com/users/' + document.getElementById('user').value + '/repos');
         xhr.send(null);
-
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
@@ -39,13 +38,14 @@ function promiseConsultaRepositoriosGithubProfile() {
 }
 
 function mostraResultadoConsultaRepositoriosGithubProfile() {
+    adicionaLoadingLista();
     promiseConsultaRepositoriosGithubProfile()
         .then(function (response) {
             criaListaRepositoriosGithubProfile(response);
         })
         .catch(function (error) {
             console.log(error);
-
+            alert('O usuario pesquisado não existe');
         });
 }
 
@@ -75,4 +75,23 @@ function CriaLIRepositorio(item) {
 function verificaListaAntigaExiste() {
     var listaAntiga = document.getElementById('lista repositorios');
     listaAntiga ? listaAntiga.remove() : '';
+}
+
+function adicionaLoadingLista() {
+    var ul = criaLoadingLista();
+    document.getElementById('exercicio 2').appendChild(ul);
+}
+
+function criaLoadingLista() {
+    verificaListaAntigaExiste();
+    var UL = criaULRepositorios();
+    UL.appendChild(criaLILoading());
+    return UL;
+}
+
+function criaLILoading() {
+    var LI = document.createElement('li');
+    LI.setAttribute('id', 'loading');
+    LI.innerHTML = 'Loading...'
+    return LI;
 }
