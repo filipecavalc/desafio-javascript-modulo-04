@@ -1,30 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>desafio javascript modulo 04</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-  <div name='exercicio 1' id="exercicio 1">
-    <h3>Exercicio 1 - Verificar Maioridade com promise</h3>
-    <input type="text" name="idade" id="idade">
-    <button onclick="mostraResultadoPromiseIdade()">Verificar idade</button>
-  </div>
-
-  <div name='exercicio 2 e 3' id="exercicio 2 e 3">
-    <h3>Exercicio 2 e 3 - Consulta via API Github com loading e mensagem de erro</h3>
-    <input type="text" name="user" id="user">
-    <button onclick="mostraResultadoConsultaRepositoriosGithubProfile()">consultar</button>
-  </div>
-
-  <script type="text/javascript" src="exercicio-01.js"></script>
-  <script type="text/javascript" src="exercicio-02.js"></script>
-  <script type="text/javascript" src="exercicio-03.js"></script>
-  <script type="text/javascript" src="utils.js"></script>
+  <input type="text" id="gitUser" placeholder="Digite o usuário do github">
+  <button onclick="getOnGit()">Adicionar</button>
+  <ul></ul>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
